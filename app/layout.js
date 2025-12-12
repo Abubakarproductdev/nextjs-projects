@@ -1,7 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
-import { CartProvider } from '../context/CartContext'; // Import the file you just made
+import { CartProvider } from '../context/CartContext'; 
+import Script from 'next/script'; // <--- 1. IMPORT THIS
 import {
   ClerkProvider,
   SignInButton,
@@ -30,17 +31,24 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-    <html lang="en">
+      <html lang="en">
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <CartProvider>
-        <Navbar />
-          {children}
-          <Footer />
+            <Navbar />
+            
+            {/* <--- 2. USE THE NEXT.JS SCRIPT COMPONENT HERE */}
+            <Script 
+              src="https://cdn.lordicon.com/lordicon.js" 
+              strategy="lazyOnload" 
+            />
+            
+            {children}
+            <Footer />
           </CartProvider>
         </body>
-    </html>
+      </html>
     </ClerkProvider>
   );
 }

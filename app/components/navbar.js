@@ -6,17 +6,17 @@ import { ShoppingCart, User, ChevronDown, Car } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 export default function Navbar() {
   const [categoriesOpen, setCategoriesOpen] = useState(false);
-  const {user}=useCart();
+  const { user } = useCart();
 
-const {openSignIn}= useClerk();
+  const { openSignIn } = useClerk();
   return (
     <header className="bg-blue-700 text-white">
       <div className="flex items-center justify-between px-6 py-3">
         {/* Logo */}
-        <Link  href={`/`}>
-        <div className="flex items-center space-x-2">
-          <img src="https://media.naheed.pk/logo/stores/1/websitelogo_comp.png" alt="Naheed" className="h-8" />
-        </div>
+        <Link href={`/`}>
+          <div className="flex items-center space-x-2">
+            <img src="https://media.naheed.pk/logo/stores/1/websitelogo_comp.png" alt="Naheed" className="h-8" />
+          </div>
         </Link>
 
         {/* Categories */}
@@ -46,30 +46,48 @@ const {openSignIn}= useClerk();
             className="w-full border-amber-50 border-2 bg-amber-50 rounded-l-md px-3 py-2 text-black focus:outline-none"
           />
           <button className="bg-white text-black px-4 rounded-r-md font-semibold">
-            🔍
+            <lord-icon
+            className="h-6 w-6"
+              src="https://cdn.lordicon.com/wjyqkiew.json"
+              trigger="hover"
+              stroke="bold"
+              
+              >
+            </lord-icon>
           </button>
         </div>
 
         {/* Icons */}
-        <div className="flex items-center space-x-4">
-          {user?
-          <>
-           <UserButton />
-          </>:
 
-          <div className="flex items-center space-x-1">
-            <User className="h-5 w-5" />
-            <button onClick={openSignIn} className="text-sm">Account</button>
-          </div>}
+        <div className="flex items-center space-x-6">
+          <Link href="/AddToCart">
+            <div className="flex items-center  space-x-1">
+
+              <lord-icon
+                src="https://cdn.lordicon.com/uisoczqi.json"
+                trigger="hover"
+                colors="primary:#ffffff,secondary:#ffffff"
+                stroke="bold"
+
+
+              >
+              </lord-icon>
+
+            </div></Link>
+
           <div className="flex items-center space-x-1">
             <span className="text-sm">Wishlist</span>
           </div>
-          <Link href="/AddToCart">
-          <div className="flex items-center  space-x-1">
-            
-            <ShoppingCart className="h-5 w-5" />
-            <span className="text-sm">Cart</span>
-          </div></Link>
+          {user ?
+            <>
+              <UserButton />
+            </> :
+
+            <div className="flex items-center space-x-1">
+              <User className="h-5 w-5" />
+              <button onClick={openSignIn} className="text-sm">Account</button>
+            </div>}
+
         </div>
       </div>
     </header>

@@ -51,7 +51,7 @@ const Grid = ({ indexes, id, name, images, catname, prices, ratings }) => {
 
       {/* Product Details */}
       <div className="px-1">
-        <h3 className="text-sm font-semibold overflow-x-hidden text-gray-900 line-clamp-2 mb-1">{name}</h3>
+        <h3 className="text-sm font-semibold overflow-x-hidden text-gray-900 line-clamp-2 mb-1">{name.length > 20 ? name.substring(0, 20) + "..." : name}</h3>
         <p className="text-xs text-gray-500 mb-2 capitalize">{catname}</p>
 
         {/* Rating */}
