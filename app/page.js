@@ -50,6 +50,7 @@ const Page = () => {
           <div className="flex gap-6 overflow-x-auto scrollbar-hide pb-4">
             {filtered.map((item, index) => (
                 <Grid
+                key={item.id}
                 indexes={index}
                   id={item.id}
                   name={item.title}

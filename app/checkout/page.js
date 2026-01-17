@@ -125,7 +125,7 @@ export default function CheckoutPage() {
       if (data.success) {
         toast.success("Order placed successfully!");
         router.push("/");
-        cartItems.length = 0; // Clear cart after successful order
+         // Clear cart after successful order
         localStorage.cart = "[]"; // Clear cart after successful order
       } else {
         toast.error("Something went wrong");

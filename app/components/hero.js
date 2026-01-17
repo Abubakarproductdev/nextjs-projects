@@ -2,7 +2,7 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 
-const hero = () => {
+const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
     { bg: "from-blue-600 to-blue-800", title: "Holiday Sale", subtitle: "Up to 70% Off on Electronics", cta: "Shop Now" },
@@ -52,4 +52,4 @@ const hero = () => {
   );
 };
 
-export default hero
+export default Hero
