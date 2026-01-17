@@ -14,6 +14,10 @@ export default function ProductDetails({ formattedProduct, productOriginal }) {
   const { addToCart } = useCart();
   const {user}=useCart();
   const {openSignIn}= useClerk();
+
+
+
+  
   const handleAddToCart = () => {
     addToCart(productOriginal);
     setShowsucess(true);

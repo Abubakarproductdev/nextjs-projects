@@ -4,18 +4,25 @@ import Link from "next/link";
 import { useClerk, UserButton } from "@clerk/nextjs";
 import { ShoppingCart, User, ChevronDown, Car } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+
+
+
 export default function Navbar() {
   const [categoriesOpen, setCategoriesOpen] = useState(false);
   const { user } = useCart();
-
   const { openSignIn } = useClerk();
+
+
+
+
+
   return (
     <header className="bg-blue-700 text-white">
-      <div className="flex items-center justify-between px-6 py-3">
+      <div className="flex items-center justify-between px-6 py-2">
         {/* Logo */}
         <Link href={`/`}>
           <div className="flex items-center space-x-2">
-            <img src="https://media.naheed.pk/logo/stores/1/websitelogo_comp.png" alt="Naheed" className="h-8" />
+            <img src="/H__2_-removebg-preview.png" alt="industrial ideation" className="h-15" />
           </div>
         </Link>
 
@@ -47,12 +54,12 @@ export default function Navbar() {
           />
           <button className="bg-white text-black px-4 rounded-r-md font-semibold">
             <lord-icon
-            className="h-6 w-6"
+              className="h-6 w-6"
               src="https://cdn.lordicon.com/wjyqkiew.json"
               trigger="hover"
               stroke="bold"
-              
-              >
+
+            >
             </lord-icon>
           </button>
         </div>
@@ -64,6 +71,8 @@ export default function Navbar() {
             <div className="flex items-center  space-x-1">
 
               <lord-icon
+                className="h-7 w-7"
+
                 src="https://cdn.lordicon.com/uisoczqi.json"
                 trigger="hover"
                 colors="primary:#ffffff,secondary:#ffffff"
@@ -76,11 +85,30 @@ export default function Navbar() {
             </div></Link>
 
           <div className="flex items-center space-x-1">
-            <span className="text-sm">Wishlist</span>
+            <lord-icon
+              className="h-7 w-7"
+              src="https://cdn.lordicon.com/nvsfzbop.json"
+              trigger="hover"
+              stroke="bold"
+              colors="primary:#ffffff,secondary:#ffffff"
+            >
+            </lord-icon>
           </div>
           {user ?
             <>
-              <UserButton />
+              
+              <div className="flex items-center space-x-1">
+                <Link href="/OrderPage">
+                <lord-icon
+                  src="https://cdn.lordicon.com/qfijwmqj.json"
+                  trigger="hover"
+                  stroke="bold"
+                  colors="primary:#ffffff,secondary:#ffffff"
+                >
+                </lord-icon></Link>
+              </div>
+              <UserButton className="h-8 w-8" />
+
             </> :
 
             <div className="flex items-center space-x-1">
