@@ -27,7 +27,7 @@ export default function CartPage() {
     return (
       <div className="bg-white min-h-screen flex flex-col items-center justify-center space-y-4">
         <h1 className="text-3xl font-bold text-gray-900">Your Cart is Empty</h1>
-        <p className="text-gray-500">Looks like you haven't added anything yet.</p>
+        <p className="text-gray-500">Looks like you havent added anything yet.</p>
         <Link href="/home">
           <button className="bg-black text-white px-6 py-3 rounded-md font-bold hover:bg-gray-800 transition">
             Continue Shopping
@@ -171,7 +171,7 @@ export default function CartPage() {
             <div className="mt-6 mb-4">
               <div className="flex items-center justify-between text-xs font-bold mb-2">
                 <span className="flex items-center">
-                  Based on items in your cart, you're eligible for <span className="ml-1 font-extrabold">Free Shipping</span>
+                  Based on items in your cart youre eligible for <span className="ml-1 font-extrabold">Free Shipping</span>
                 </span>
                 <FiTruck className="text-gray-700 h-5 w-5 transform scale-x-[-1]" />
               </div>
